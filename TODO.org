@@ -1,0 +1,28 @@
+#+TITLE: TODO
+* DONE `λ' or `lambda' instead of `fn'
+  CLOSED: [2011-11-30 Wed 08:58]
+  #+BEGIN_SRC clojure :tangle lambda.clj :shebang #!/usr/bin/env clj
+    (use 'add-classpath.core)
+    
+    (add-classpath "lib/debug-1.0.0-SNAPSHOT.jar")
+    
+    (use 'debug.core)
+    
+    (defmacro λ [& sigs]
+      `(fn ~@sigs))
+    
+    (defmacro lambda [& sigs]
+      `(fn ~@sigs))
+    
+    (debug ((λ [x] 2) 3))
+    
+  #+END_SRC
+* TODO What about `defn', &c.?
+  - =bound-fn=
+  - =defn=
+  - =fn?=
+  - =ifn?=
+  - =letfn=
+  - =memfn=
+  - =somefn=
+  - =with-redefs-fn=
