@@ -1,2 +1,19 @@
 #+TITLE: README
-=fn= is ok; but we prefer =λ= or =lambda=.
+* Motivation
+  =fn= is ok, but we prefer =λ= or =lambda=; for instance:
+  #+BEGIN_SRC clojure
+    (def identity
+      "Returns its argument."
+      (λ [x] x))
+  #+END_SRC
+  or take the more succinct =deλ=:
+  #+BEGIN_SRC clojure
+    (deλ identity
+      "Returns its argument."
+      [x] x)
+  #+END_SRC
+* Leiningen
+  Add the following to your dependencies in =project.clj=:
+  #+BEGIN_EXAMPLE
+    [lambda "1.0.1-SNAPSHOT"]
+  #+END_EXAMPLE
