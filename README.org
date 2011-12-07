@@ -12,8 +12,18 @@
       "Returns its argument."
       [x] x)
   #+END_SRC
-* Leiningen
-  Add the following to your dependencies in =project.clj=:
-  #+BEGIN_EXAMPLE
+
+* Usage
+  See [[http://clojars.org/lambda][Clojars]]; in Leiningen, add the following to your dependencies in
+  =project.clj=:
+  #+BEGIN_SRC clojure
     [lambda "1.0.1-SNAPSHOT"]
-  #+END_EXAMPLE
+  #+END_SRC
+  or in Maven, to your =pom.xml=:
+  #+BEGIN_SRC xml
+    <dependency>
+      <groupId>lambda</groupId>
+      <artifactId>lambda</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+  #+END_SRC
