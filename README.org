@@ -6,9 +6,9 @@
       "Returns its argument."
       (λ [x] x))
   #+END_SRC
-  or take the more succinct =deλ=:
+  or take the more succinct =defλ=:
   #+BEGIN_SRC clojure
-    (deλ identity
+    (defλ identity
       "Returns its argument."
       [x] x)
   #+END_SRC
@@ -35,8 +35,9 @@
     <Multi_key> <l> <l> : "λ" U03BB # GREEK SMALL LETTER LAMBDA
   #+END_EXAMPLE
 * Emacs
-  Add the following to =~/.emacs= to make =λ= and =deλ= and behave
-  like =fn= and =defn= with respect to highlighting and indentation:
+  Add the following to =~/.emacs= to make =lambda=, =λ= and =defλ=
+  behave like e.g. =fn= and =defn= with respect to highlighting and
+  indentation:
 
   #+BEGIN_SRC elisp
     (add-hook
@@ -44,7 +45,7 @@
      (lambda ()
        (font-lock-add-keywords
         nil
-        `((,(concat "(\\(?:lambda.core/\\)?\\(deλ\\)"
+        `((,(concat "(\\(?:lambda.core/\\)?\\(defλ\\)\\>"
                     ;; Any whitespace
                     "[ \r\n\t]*"
                     ;; Possibly type or metadata
@@ -52,20 +53,16 @@
                     "\\(\\sw+\\)?")
            (1 font-lock-keyword-face)
            (2 font-lock-function-name-face nil t))
-          (,(concat "(\\(?:lambda.core/\\)?\\(λ\\)[ \t]+"
-                    ;; Possibly type
-                    "\\(?:#?^\\sw+[ \t]*\\)?"
-                    ;; Possibly name
-                    "\\(\\sw+\\)?" )
-           (1 font-lock-keyword-face)
-           (2 font-lock-function-name-face nil t))
           (,(concat "(\\(?:lambda.core/\\)?"
-                    (regexp-opt '("deλ" "λ") t)
-                    "\\>")
-           1 font-lock-builtin-face))
-        t)))
+                    (regexp-opt '("defλ"
+                                  "λ"
+                                  "lambda") t)
+                    "\\>"
+                    )
+           1 font-lock-builtin-face)))))
     
-    (put 'deλ 'clojure-doc-string-elt 2)
-    (put 'deλ 'clojure-indent-function 'defun)
+    (put 'defλ 'clojure-doc-string-elt 2)
+    (put 'defλ 'clojure-indent-function 'defun)
     (put 'λ 'clojure-indent-function 'defun)
+    (put 'lambda 'clojure-indent-function 'defun)
   #+END_SRC
