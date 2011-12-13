@@ -6,7 +6,7 @@
       "Returns its argument."
       (λ [x] x))
   #+END_SRC
-  or take the more succinct =defλ=:
+  or even =defλ=:
   #+BEGIN_SRC clojure
     (defλ identity
       "Returns its argument."
