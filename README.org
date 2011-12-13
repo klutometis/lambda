@@ -28,8 +28,8 @@
     </dependency>
   #+END_SRC
 * Typing λ
-  Enable λ as the result of typing Compose-l-l (or Multikey-l-l) by
-  adding the following to =~/.Xcompose=:
+  Enable λ as the result of typing =Compose-l-l= (or =Multikey-l-l=)
+  by adding the following to =~/.Xcompose=:
 
   #+BEGIN_EXAMPLE
     <Multi_key> <l> <l> : "λ" U03BB # GREEK SMALL LETTER LAMBDA
