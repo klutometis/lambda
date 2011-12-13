@@ -27,6 +27,13 @@
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
   #+END_SRC
+* Typing λ
+  Enable λ as the result of typing Compose-l-l (or Multikey-l-l) by
+  adding the following to =~/.Xcompose=:
+
+  #+BEGIN_EXAMPLE
+    <Multi_key> <l> <l> : "λ" U03BB # GREEK SMALL LETTER LAMBDA
+  #+END_EXAMPLE
 * Emacs
   Add the following to =~/.emacs= to make =λ= and =deλ= and behave
   like =fn= and =defn= with respect to highlighting and indentation:
