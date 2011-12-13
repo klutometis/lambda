@@ -26,3 +26,5 @@
   - =memfn=
   - =somefn=
   - =with-redefs-fn=
+
+* TODO =defλ= might be a better synonym for =defn= than =deλ=.
