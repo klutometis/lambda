@@ -4,4 +4,4 @@
 
 (defmacro lambda [& sigs] `(fn ~@sigs))
 
-(defmacro deλ [& sigs] `(defn ~@sigs))
+(defmacro defλ [& sigs] `(defn ~@sigs))
