@@ -27,3 +27,38 @@
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
   #+END_SRC
+* Emacs
+  Add the following to =~/.emacs= to make =λ= and =deλ= and behave
+  like =fn= and =defn= with respect to highlighting and indentation:
+
+  #+BEGIN_SRC elisp
+    (add-hook
+     'clojure-mode-hook
+     (lambda ()
+       (font-lock-add-keywords
+        nil
+        `((,(concat "(\\(?:lambda.core/\\)?\\(deλ\\)"
+                    ;; Any whitespace
+                    "[ \r\n\t]*"
+                    ;; Possibly type or metadata
+                    "\\(?:#?^\\(?:{[^}]*}\\|\\sw+\\)[ \r\n\t]*\\)*"
+                    "\\(\\sw+\\)?")
+           (1 font-lock-keyword-face)
+           (2 font-lock-function-name-face nil t))
+          (,(concat "(\\(?:lambda.core/\\)?\\(λ\\)[ \t]+"
+                    ;; Possibly type
+                    "\\(?:#?^\\sw+[ \t]*\\)?"
+                    ;; Possibly name
+                    "\\(\\sw+\\)?" )
+           (1 font-lock-keyword-face)
+           (2 font-lock-function-name-face nil t))
+          (,(concat "(\\(?:lambda.core/\\)?"
+                    (regexp-opt '("deλ" "λ") t)
+                    "\\>")
+           1 font-lock-builtin-face))
+        t)))
+    
+    (put 'deλ 'clojure-doc-string-elt 2)
+    (put 'deλ 'clojure-indent-function 'defun)
+    (put 'λ 'clojure-indent-function 'defun)
+  #+END_SRC
