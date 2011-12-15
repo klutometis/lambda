@@ -30,3 +30,4 @@
 * TODO =defλ= might be a better synonym for =defn= than =deλ=.
   There's at least one [[http://books.google.com/books?id=1OPlUd8Tu6AC&pg=PA440&lpg=PA440&dq=%22def%CE%BB%22&source=bl&ots=BEWtOMpOom&sig=uFUyo0AFnZSQy9mwaSALRNWY_nQ&hl=en&ei=mqXnTuzRB7CFsgK-stmLCQ&sa=X&oi=book_result&ct=result&resnum=2&ved=0CCIQ6AEwAQ#v=onepage&q=%22def%CE%BB%22&f=false][precedent]] for =defλ=.
 * TODO Reader macro =λ(... %)= that replaces =#(... %)=
+  A character-macro, essentially, that calls =read-fn=.
