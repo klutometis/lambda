@@ -1,4 +1,5 @@
 #+TITLE: TODO
+* TODO Package that implements font-lock
 * DONE `λ' or `lambda' instead of `fn'
   CLOSED: [2011-11-30 Wed 08:58]
   #+BEGIN_SRC clojure :tangle lambda.clj :shebang #!/usr/bin/env clj
